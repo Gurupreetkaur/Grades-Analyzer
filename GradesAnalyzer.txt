@@ -1,0 +1,62 @@
+public class GradesAnalyzer {
+
+    static double average(int[] a) {
+        int sum = 0;
+
+        for (int i = 0; i < a.length; i++) {
+            sum += a[i];
+        }
+
+        return (double) sum / a.length;
+    }
+
+    static int highest(int[] a) {
+        int highest = a[0];
+
+        for (int i = 1; i < a.length; i++) {
+            if (a[i] > highest) {
+                highest = a[i];
+            }
+        }
+
+        return highest;
+    }
+
+    static int lowest(int[] a) {
+        int lowest = a[0];
+
+        for (int i = 1; i < a.length; i++) {
+            if (a[i] < lowest) {
+                lowest = a[i];
+            }
+        }
+
+        return lowest;
+    }
+
+    static int countPassed(int[] a) {
+        int passed = 0;
+
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] >= 70) {
+                passed++;
+            }
+        }
+
+        return passed;
+    }
+
+    public static void main(String[] args) {
+        int[] grades = {95, 87, 72, 60, 55, 100, 88, 45};
+
+        double average = average(grades);
+        int highestGrade = highest(grades);
+        int lowestGrade = lowest(grades);
+        int passed = countPassed(grades);
+
+        System.out.println("Average grade: " + average);
+        System.out.println("Highest grade: " + highestGrade);
+        System.out.println("Lowest grade: " + lowestGrade);
+        System.out.println("Number of students who passed: " + passed);
+    }
+}
